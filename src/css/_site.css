@@ -35,7 +35,7 @@
 
 .site-footer {
   font-size: 0.875em;
-  padding: 2em;
+  padding-bottom: 2em;
 }
 
 /*
@@ -62,16 +62,24 @@
   color: #fff;
 }
 
+.cover-container {
+  flex: 1;
+}
+
+.cover {
+  width: 55%;
+}
+
 /*
  * Site promo
  */
 
 .site-promo {
-  padding: 4em 0 6em;
+  padding: 1em 0 0;
 }
 
 .site-promo .description {
-  color: #ddd;
+  color: #ff0000;
   font-size: 1.2em;
   margin: 1em 2em 0;
 }

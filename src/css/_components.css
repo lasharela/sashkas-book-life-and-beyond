@@ -14,6 +14,19 @@
   padding: 0 10px;
 }
 
+.buttons-wrapper {
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.buttons-wrapper a {
+  display: block;
+}
+.buttons-wrapper a img {
+  width: 200px;
+}
+
 /*
  * Aside
  */
@@ -65,9 +78,7 @@
 .btn-download {
   background-color: #d9750b;
   background-image: linear-gradient(#f90 10%, #e76a00 100%);
-  box-shadow:
-    0 1px 0 rgb(255 255 255 / 50%) inset,
-    0 1px 3px rgb(0 0 0 / 20%);
+  box-shadow: 0 1px 0 rgb(255 255 255 / 50%) inset, 0 1px 3px rgb(0 0 0 / 20%);
   border: 1px solid #995309;
 }
 
