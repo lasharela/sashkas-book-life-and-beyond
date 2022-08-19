@@ -62,12 +62,24 @@
   color: #fff;
 }
 
+.cover-global-wrapper {
+  display: flex;
+  justify-content: center;
+}
 .cover-container {
-  flex: 1;
+  position: relative;
+  width: 70%;
+  display: block;
 }
 
 .cover {
-  width: 55%;
+  width: 100%;
+}
+.cover-date {
+  position: absolute;
+  width: 35%;
+  bottom: 0;
+  right: 0;
 }
 
 /*

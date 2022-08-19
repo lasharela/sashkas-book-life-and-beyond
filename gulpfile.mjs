@@ -12,16 +12,15 @@ import gulpSmoosher from "gulp-smoosher";
 import gulpUnCSS from "gulp-uncss";
 import gulpUseRef from "gulp-useref";
 import reworkNpm from "rework-npm";
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
-const pkg = require("./package.json");
-const dirs = pkg["h5bp-configs"].directories;
+
 const reload = browserSync.reload;
 const browserSyncOptions = {
   logPrefix: "H5BP",
   notify: false,
   port: 8080,
 };
+
+const dirs = { src: "src", dist: "docs" };
 
 async function cleanBefore() {
   deleteSync([dirs.dist]);
@@ -40,7 +39,7 @@ function copyHTML() {
   return gulp
     .src(dirs.src + "/index.html")
     .pipe(gulpUseRef())
-    .pipe(gulp.dest("docs"));
+    .pipe(gulp.dest(dirs.dist));
 }
 
 function copyCSS() {
@@ -146,13 +145,13 @@ gulp.task("serve", gulp.series(generateMainCSS, browserSyncFn));
 gulp.task(
   "build",
   gulp.series(
-    gulp.parallel(cleanBefore, lintJS),
+    gulp.parallel(cleanBefore),
     generateMainCSS,
     copyHTML,
     copyCSS,
     copyMisc,
-    minifyHTML,
-    cleanAfter
+    minifyHTML
+    // cleanAfter
   )
 );
 

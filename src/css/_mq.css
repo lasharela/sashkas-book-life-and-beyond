@@ -55,8 +55,11 @@
 }
 
 @media only screen and (max-width: 420px) {
-  .cover {
+  .cover-container {
     width: 95%;
+  }
+  .cover-date {
+    width: 40%;
   }
   h1 {
     font-size: 2.5em;
